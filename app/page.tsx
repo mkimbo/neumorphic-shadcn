@@ -93,7 +93,7 @@ export default function Home() {
 
   return (
     <DashboardShell>
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
         {/* Header */}
         <div className="mb-16 text-center">
           <h1 className="text-5xl font-bold text-foreground mb-4 text-balance">
@@ -588,13 +588,13 @@ export default function Home() {
                 Sample analytics data displayed in a neumorphic container
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="w-full overflow-x-auto p-2">
               <ChartContainer
                 config={{
                   value: { label: "Sales", color: "#ea580c" },
                   value2: { label: "Revenue", color: "#ff7d3f" },
                 }}
-                className="h-80"
+                className="h-80 min-w-full overflow-x-auto"
               >
                 <BarChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -617,13 +617,13 @@ export default function Home() {
                 Trend data with smooth line visualization
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="w-full overflow-x-auto p-2">
               <ChartContainer
                 config={{
                   value: { label: "Traffic", color: "#ea580c" },
                   value2: { label: "Conversions", color: "#ff7d3f" },
                 }}
-                className="h-80"
+                className="h-80 min-w-full overflow-x-auto"
               >
                 <LineChart data={chartData}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -658,7 +658,7 @@ export default function Home() {
                 Distribution of product categories
               </CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="w-full overflow-x-auto p-2">
               <ChartContainer
                 config={{
                   "Product A": { label: "Product A", color: "#ea580c" },
@@ -666,7 +666,7 @@ export default function Home() {
                   "Product C": { label: "Product C", color: "#d4d7e8" },
                   "Product D": { label: "Product D", color: "#35354a" },
                 }}
-                className="h-80"
+                className="h-80 min-w-full overflow-x-auto"
               >
                 <PieChart>
                   <Tooltip content={<ChartTooltipContent />} />

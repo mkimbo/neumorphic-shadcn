@@ -1,6 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
@@ -8,8 +8,17 @@ import { ThemeProvider } from "@/context/theme-provider";
 import { DashboardProvider } from "@/components/ui";
 import { GlobalDialog } from "@/components/ui/global-dialog/GlobalDialog";
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const fontSans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "500", "600", "700"],
+});
+
+const fontHeading = Poppins({
+  subsets: ["latin"],
+  variable: "--font-heading",
+  weight: ["700", "800", "900"], // Poppins looks great when bold
+});
 
 export const metadata: Metadata = {
   title: "Neumorphic Design System",
@@ -41,7 +50,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`font-sans antialiased ${fontSans.variable} ${fontHeading.variable}`}
+      >
         <ThemeProvider>
           <DashboardProvider>{children}</DashboardProvider>
         </ThemeProvider>
