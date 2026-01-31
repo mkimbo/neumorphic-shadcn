@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "@/context/theme-provider";
 import { DashboardProvider } from "@/components/ui";
+import { GlobalDialog } from "@/components/ui/global-dialog/GlobalDialog";
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -44,6 +45,7 @@ export default function RootLayout({
         <ThemeProvider>
           <DashboardProvider>{children}</DashboardProvider>
         </ThemeProvider>
+        <GlobalDialog />
         <Analytics />
       </body>
     </html>

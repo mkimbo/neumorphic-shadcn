@@ -7,7 +7,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-6 rounded-3xl py-9 px-9 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.5),inset_2px_2px_5px_rgba(255,255,255,0.3),inset_-2px_-2px_5px_rgba(0,0,0,0.1)] dark:shadow-[5px_5px_12px_rgba(0,0,0,0.4),-5px_-5px_12px_rgba(255,255,255,0.06),inset_2px_2px_5px_rgba(255,255,255,0.06),inset_-2px_-2px_5px_rgba(0,0,0,0.3)] hover:shadow-[7px_7px_14px_rgba(0,0,0,0.12),-7px_-7px_14px_rgba(255,255,255,0.6),inset_2px_2px_5px_rgba(255,255,255,0.35),inset_-2px_-2px_5px_rgba(0,0,0,0.12)] dark:hover:shadow-[7px_7px_16px_rgba(0,0,0,0.5),-7px_-7px_16px_rgba(255,255,255,0.08),inset_2px_2px_5px_rgba(255,255,255,0.08),inset_-2px_-2px_5px_rgba(0,0,0,0.35)]",
+        "bg-card text-card-foreground flex flex-col gap-6 rounded-2xl p-6 shadow-[5px_5px_10px_rgba(0,0,0,0.1),-5px_-5px_10px_rgba(255,255,255,0.5),inset_2px_2px_5px_rgba(255,255,255,0.3),inset_-2px_-2px_5px_rgba(0,0,0,0.1)] dark:shadow-[5px_5px_12px_rgba(0,0,0,0.4),-5px_-5px_12px_rgba(255,255,255,0.06),inset_2px_2px_5px_rgba(255,255,255,0.06),inset_-2px_-2px_5px_rgba(0,0,0,0.3)] hover:shadow-[7px_7px_14px_rgba(0,0,0,0.12),-7px_-7px_14px_rgba(255,255,255,0.6),inset_2px_2px_5px_rgba(255,255,255,0.35),inset_-2px_-2px_5px_rgba(0,0,0,0.12)] dark:hover:shadow-[7px_7px_16px_rgba(0,0,0,0.5),-7px_-7px_16px_rgba(255,255,255,0.08),inset_2px_2px_5px_rgba(255,255,255,0.08),inset_-2px_-2px_5px_rgba(0,0,0,0.35)]",
         className,
       )}
       {...props}

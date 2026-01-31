@@ -67,6 +67,7 @@ import {
 } from "recharts";
 import { DashboardShell } from "@/components/ui";
 import { Label } from "@/components/ui/label";
+import { NeumorphicDialog } from "@/components/NeumorphicDialog";
 
 const chartData = [
   { name: "Jan", value: 400, value2: 240 },
@@ -403,7 +404,10 @@ export default function Home() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <Dialog>
+              <NeumorphicDialog>
+                <Button className="w-full">Open Dialog</Button>
+              </NeumorphicDialog>
+              {/* <Dialog>
                 <DialogTrigger asChild>
                   <Button className="w-full">Open Dialog</Button>
                 </DialogTrigger>
@@ -423,7 +427,7 @@ export default function Home() {
                     <Button className="w-full">Confirm</Button>
                   </div>
                 </DialogContent>
-              </Dialog>
+              </Dialog> */}
 
               <Popover>
                 <PopoverTrigger asChild>

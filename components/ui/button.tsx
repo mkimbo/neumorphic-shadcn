@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-2xl text-sm font-semibold transition-transform disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive active:shadow-[inset_3px_3px_7px_rgba(0,0,0,0.15),inset_-2px_-2px_5px_rgba(255,255,255,0.3)] active:scale-98",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-medium transition-transform disabled:pointer-events-none disabled:opacity-40 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive active:shadow-[inset_3px_3px_7px_rgba(0,0,0,0.15),inset_-2px_-2px_5px_rgba(255,255,255,0.3)] active:scale-[0.97]",
   {
     variants: {
       variant: {
@@ -23,11 +23,11 @@ const buttonVariants = cva(
       },
       size: {
         default: "h-11 px-7 py-2.5 has-[>svg]:px-4",
-        sm: "h-9 rounded-xl gap-1.5 px-5 has-[>svg]:px-3 text-sm",
-        lg: "h-13 rounded-2xl px-10 has-[>svg]:px-5 text-base",
+        sm: "h-9 rounded-lg gap-1.5 px-5 has-[>svg]:px-3 text-sm",
+        lg: "h-13 rounded-xl px-10 has-[>svg]:px-5 text-base",
         icon: "size-11",
-        "icon-sm": "size-9 rounded-2xl",
-        "icon-lg": "size-13 rounded-2xl",
+        "icon-sm": "size-9 rounded-lg",
+        "icon-lg": "size-13 rounded-xl",
       },
     },
     defaultVariants: {
