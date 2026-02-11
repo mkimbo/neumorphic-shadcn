@@ -13,6 +13,7 @@ import {
 import { useDashboard } from "./DashboardProvider";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ThemeToggle } from "./theme-toggle";
+import { ThemeSwitcher } from "./theme-switcher";
 
 export function TopNav() {
   const { toggleMenuState, toggleMobileMenu, isMobile } = useDashboard();
@@ -33,7 +34,8 @@ export function TopNav() {
         <Menu className="h-5 w-5" />
       </Button>
       <div className="flex items-center gap-2 sm:gap-4">
-        <ThemeToggle />
+        <ThemeSwitcher />
+
         <Button variant="ghost" size="icon">
           <Bell className="h-5 w-5" />
         </Button>

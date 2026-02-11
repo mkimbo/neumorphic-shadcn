@@ -13,6 +13,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       defaultTheme="light"
       enableSystem
       disableTransitionOnChange={false}
+      themes={["light", "dark", "navy", "rose", "mint"]}
     >
       {children}
     </NextThemesProvider>
@@ -23,13 +24,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 export function useTheme() {
   const { theme, setTheme, resolvedTheme } = useNextTheme();
 
-  const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  };
-
   return {
-    theme: resolvedTheme as "light" | "dark" | undefined,
-    toggleTheme,
+    theme,
+    resolvedTheme,
     setTheme,
   };
 }

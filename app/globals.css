@@ -4,7 +4,6 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light mode - Neumorphic soft neutrals */
   --background: #f0f0f3;
   --foreground: #2d2d3a;
   --card: #e8e8ed;
@@ -25,15 +24,50 @@
   --input: #e8e8ed;
   --ring: #ea580c;
 
-  /* Neumorphic shadows - Reduced outer shadow, more subtle */
+  /* Neumorphic shadow definitions */
+  /* Base shadow layers */
+  --shadow-light-highlight: rgba(255, 255, 255, 0.5);
+  --shadow-light-shadow: rgba(0, 0, 0, 0.1);
+  --shadow-light-inset-highlight: rgba(255, 255, 255, 0.4);
+  --shadow-light-inset-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Card/Large component shadows */
+  --shadow-card:
+    5px 5px 10px var(--shadow-light-shadow),
+    -5px -5px 10px var(--shadow-light-highlight),
+    inset 2px 2px 5px var(--shadow-light-inset-highlight),
+    inset -2px -2px 5px var(--shadow-light-inset-shadow);
+  --shadow-card-hover:
+    7px 7px 14px var(--shadow-light-shadow),
+    -7px -7px 14px var(--shadow-light-highlight),
+    inset 2px 2px 5px var(--shadow-light-inset-highlight),
+    inset -2px -2px 5px var(--shadow-light-inset-shadow);
+
+  /* Medium component shadows (buttons, toggles, badges) */
+  --shadow-md:
+    4px 4px 8px rgba(0, 0, 0, 0.08), -4px -4px 8px rgba(255, 255, 255, 0.4),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.4),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md-hover:
+    5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.5);
+
+  /* Small component shadows (dropdown items, smaller buttons) */
+  --shadow-sm:
+    3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.4);
+
+  /* Inset shadows for input-like elements */
   --shadow-inset:
-    inset 2px 2px 5px #ffffff, inset -3px -3px 7px rgba(0, 0, 0, 0.15);
+    inset 2px 2px 5px rgba(255, 255, 255, 0.4),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.15);
+  --shadow-inset-focus:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.4),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.15), 0 0 0 4px var(--ring)/0.15;
+
+  /* Outset shadows for elevated elements */
   --shadow-outset:
     5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 0.5),
     inset 2px 2px 5px rgba(255, 255, 255, 0.3),
     inset -2px -2px 5px rgba(0, 0, 0, 0.1);
-  --shadow-sm:
-    3px 3px 6px rgba(0, 0, 0, 0.1), -3px -3px 6px rgba(255, 255, 255, 0.4);
 
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -53,7 +87,59 @@
 }
 
 .dark {
-  /* Dark mode - Neumorphic dark grays */
+  /* Dark mode - Neumorphic matte black */
+  --background: #0f0f0f;
+  --foreground: #f0f0f0;
+  --card: #1a1a1a;
+  --card-foreground: #f0f0f0;
+  --popover: #1a1a1a;
+  --popover-foreground: #f0f0f0;
+  --primary: #ea580c;
+  --primary-foreground: #0f0f0f;
+  --secondary: #2a2a2a;
+  --secondary-foreground: #f0f0f0;
+  --muted: #242424;
+  --muted-foreground: #b0b0b0;
+  --accent: #ea580c;
+  --accent-foreground: #0f0f0f;
+  --destructive: #ff6b6b;
+  --destructive-foreground: #0f0f0f;
+  --border: #2a2a2a;
+  --input: #1a1a1a;
+  --ring: #ea580c;
+
+  /* Dark matte black shadows */
+  --shadow-card:
+    5px 5px 12px rgba(0, 0, 0, 0.6), -5px -5px 12px rgba(255, 255, 255, 0.08),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover:
+    7px 7px 16px rgba(0, 0, 0, 0.7), -7px -7px 16px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+  --shadow-md:
+    4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.06),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md-hover:
+    5px 5px 10px rgba(0, 0, 0, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.08);
+  --shadow-sm:
+    3px 3px 8px rgba(0, 0, 0, 0.5), -3px -3px 8px rgba(255, 255, 255, 0.05);
+  --shadow-inset:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.6);
+  --shadow-inset-focus:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.6), 0 0 0 4px var(--ring)/0.25;
+  --shadow-outset:
+    5px 5px 12px rgba(0, 0, 0, 0.6), -5px -5px 12px rgba(255, 255, 255, 0.08),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.navy {
+  /* Navy - Neumorphic dark grays */
+
   --background: #1a1a2e;
   --foreground: #e4e4e8;
   --card: #252541;
@@ -75,15 +161,6 @@
   --ring: #ff7d3f;
 
   /* Dark mode neumorphic shadows - Reduced outer shadow */
-  --shadow-inset:
-    inset 2px 2px 5px rgba(255, 255, 255, 0.1),
-    inset -3px -3px 7px rgba(0, 0, 0, 0.5);
-  --shadow-outset:
-    5px 5px 12px rgba(0, 0, 0, 0.4), -5px -5px 12px rgba(255, 255, 255, 0.06),
-    inset 2px 2px 5px rgba(255, 255, 255, 0.06),
-    inset -2px -2px 5px rgba(0, 0, 0, 0.3);
-  --shadow-sm:
-    3px 3px 8px rgba(0, 0, 0, 0.3), -3px -3px 8px rgba(255, 255, 255, 0.05);
 
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
@@ -99,6 +176,165 @@
   --sidebar-accent-foreground: oklch(0.92 0.02 200);
   --sidebar-border: oklch(0.3 0.01 210);
   --sidebar-ring: oklch(0.65 0.18 260);
+
+  --shadow-card:
+    5px 5px 12px rgba(0, 0, 0, 0.6), -5px -5px 12px rgba(255, 255, 255, 0.08),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+  --shadow-card-hover:
+    7px 7px 16px rgba(0, 0, 0, 0.7), -7px -7px 16px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+  --shadow-md:
+    4px 4px 8px rgba(0, 0, 0, 0.5), -4px -4px 8px rgba(255, 255, 255, 0.06),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.08),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md-hover:
+    5px 5px 10px rgba(0, 0, 0, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.08);
+  --shadow-sm:
+    3px 3px 8px rgba(0, 0, 0, 0.5), -3px -3px 8px rgba(255, 255, 255, 0.05);
+  --shadow-inset:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.6);
+  --shadow-inset-focus:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.6), 0 0 0 4px var(--ring)/0.25;
+  --shadow-outset:
+    5px 5px 12px rgba(0, 0, 0, 0.6), -5px -5px 12px rgba(255, 255, 255, 0.08),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.08),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.rose {
+  /* Rose mode - Warm Light */
+  --background: #fff5f2; /* Very pale peach/rose type background */
+  --foreground: #4a040b; /* Deep warm brown/red text */
+  --card: #ffeae3;
+  --card-foreground: #4a040b;
+  --popover: #ffeae3;
+  --popover-foreground: #4a040b;
+  --primary: #ea580c;
+  --primary-foreground: #ffffff;
+  --secondary: #fedfd6;
+  --secondary-foreground: #4a040b;
+  --muted: #eed2cb;
+  --muted-foreground: #9c6c6c;
+  --accent: #fedfd6;
+  --accent-foreground: #4a040b;
+  --destructive: #9f1239;
+  --destructive-foreground: #ffffff;
+  --border: #f5cfc4;
+  --input: #f5cfc4;
+  --ring: #ea580c;
+
+  /* Neumorphism for warm light */
+  --shadow-card:
+    5px 5px 10px rgba(0, 0, 0, 0.08), -5px -5px 10px rgba(255, 200, 200, 0.5),
+    inset 2px 2px 5px rgba(255, 220, 220, 0.3),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover:
+    7px 7px 14px rgba(0, 0, 0, 0.1), -7px -7px 14px rgba(255, 200, 200, 0.6),
+    inset 2px 2px 5px rgba(255, 220, 220, 0.3),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md:
+    4px 4px 8px rgba(0, 0, 0, 0.08), -4px -4px 8px rgba(255, 200, 200, 0.4),
+    inset 1px 1px 3px rgba(255, 220, 220, 0.4),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md-hover:
+    5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 200, 200, 0.5);
+  --shadow-sm:
+    3px 3px 6px rgba(0, 0, 0, 0.08), -3px -3px 6px rgba(255, 200, 200, 0.4);
+  --shadow-inset:
+    inset 2px 2px 5px rgba(255, 220, 220, 0.4),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.12);
+  --shadow-inset-focus:
+    inset 2px 2px 5px rgba(255, 220, 220, 0.4),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.12), 0 0 0 4px var(--ring)/0.15;
+  --shadow-outset:
+    5px 5px 10px rgba(0, 0, 0, 0.08), -5px -5px 10px rgba(255, 200, 200, 0.5),
+    inset 2px 2px 5px rgba(255, 220, 220, 0.3),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.08);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.97 0.01 20);
+  --sidebar-foreground: oklch(0.35 0.05 15);
+  --sidebar-primary: oklch(0.6 0.2 25);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.92 0.03 20);
+  --sidebar-accent-foreground: oklch(0.35 0.05 15);
+  --sidebar-border: oklch(0.9 0.03 20);
+  --sidebar-ring: oklch(0.6 0.2 25);
+}
+
+.mint {
+  /* Mint mode - Fresh Green */
+  --background: #f0fdf4; /* Very pale mint green */
+  --foreground: #064e3b; /* Deep forest green text */
+  --card: #dcfce7; /* Light mint card */
+  --card-foreground: #064e3b;
+  --popover: #dcfce7;
+  --popover-foreground: #064e3b;
+  --primary: #ea580c; /* Orange primary as requested */
+  --primary-foreground: #ffffff;
+  --secondary: #bbf7d0; /* Soft mint secondary */
+  --secondary-foreground: #064e3b;
+  --muted: #86efac; /* Muted green */
+  --muted-foreground: #14532d;
+  --accent: #bbf7d0;
+  --accent-foreground: #064e3b;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #86efac;
+  --input: #bbf7d0;
+  --ring: #ea580c;
+
+  /* Neumorphism for mint light */
+  --shadow-card:
+    5px 5px 10px rgba(0, 0, 0, 0.05), -5px -5px 10px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-card-hover:
+    7px 7px 14px rgba(0, 0, 0, 0.08), -7px -7px 14px rgba(255, 255, 255, 0.9),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.08);
+  --shadow-md:
+    4px 4px 8px rgba(0, 0, 0, 0.05), -4px -4px 8px rgba(255, 255, 255, 0.6),
+    inset 1px 1px 3px rgba(255, 255, 255, 0.6),
+    inset -1px -1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md-hover:
+    5px 5px 10px rgba(0, 0, 0, 0.08), -5px -5px 10px rgba(255, 255, 255, 0.7);
+  --shadow-sm:
+    3px 3px 6px rgba(0, 0, 0, 0.05), -3px -3px 6px rgba(255, 255, 255, 0.6);
+  --shadow-inset:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.08);
+  --shadow-inset-focus:
+    inset 2px 2px 5px rgba(255, 255, 255, 0.6),
+    inset -3px -3px 7px rgba(0, 0, 0, 0.08), 0 0 0 4px var(--ring)/0.15;
+  --shadow-outset:
+    5px 5px 10px rgba(0, 0, 0, 0.05), -5px -5px 10px rgba(255, 255, 255, 0.8),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.05);
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.98 0.01 160);
+  --sidebar-foreground: oklch(0.3 0.05 160);
+  --sidebar-primary: oklch(0.7 0.15 160);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.94 0.03 160);
+  --sidebar-accent-foreground: oklch(0.3 0.05 160);
+  --sidebar-border: oklch(0.92 0.03 160);
+  --sidebar-ring: oklch(0.7 0.15 160);
 }
 
 @theme inline {

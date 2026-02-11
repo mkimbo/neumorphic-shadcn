@@ -5,8 +5,9 @@ import { Analytics } from "@vercel/analytics/next";
 
 import "./globals.css";
 import { ThemeProvider } from "@/context/theme-provider";
-import { DashboardProvider } from "@/components/ui";
+
 import { GlobalDialog } from "@/components/ui/global-dialog/GlobalDialog";
+import { DashboardProvider } from "@/components/ui/DashboardProvider";
 
 const fontSans = Inter({
   subsets: ["latin"],

@@ -65,9 +65,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { DashboardShell } from "@/components/ui";
+
 import { Label } from "@/components/ui/label";
 import { NeumorphicDialog } from "@/components/NeumorphicDialog";
+import { DashboardShell } from "@/components/ui/DashboardShell";
 
 const chartData = [
   { name: "Jan", value: 400, value2: 240 },
